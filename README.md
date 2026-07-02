@@ -11,14 +11,23 @@ An AI-powered candidate ranking engine that ranks candidates against a job descr
 ## Project Structure
 
 src/
+
 preprocess.py
+
 embeddings.py
+
 generate_embeddings.py
+
 feature_engineering.py
+
 career_score.py
+
 behavior_score.py
+
 location_score.py
+
 scoring.py
+
 ranker.py
 
 ## Methodology
