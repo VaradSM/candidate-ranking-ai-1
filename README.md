@@ -21,9 +21,9 @@ The system processes 100,000 candidate profiles and returns the Top 100 most rel
 - Semantic Embedding Generation
 - Candidate Embedding Search
 - Feature Engineering
-       +--> Career Score   
-       +--> Behavior Score
-       +--> Location Score            
+  - Career Score   
+  - Behavior Score
+  - Location Score            
 - Weighted Scoring Engine    
 - Final Ranking
 - Top 100 Candidates
