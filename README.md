@@ -1,51 +1,158 @@
-# AI Candidate Ranking System
+# AI-Powered Candidate Ranking System
 
 ## Overview
-An AI-powered candidate ranking engine that ranks candidates against a job description using:
 
-- Semantic similarity (Sentence Transformers)
-- Career relevance scoring
-- Behavioral signal scoring
-- Location preference scoring
+This project was developed for the Redrob Intelligent Candidate Discovery & Ranking Challenge.
 
-## Project Structure
+The objective is to rank candidates against a job description using a hybrid AI-driven ranking approach that combines:
 
-src/
+- Semantic Matching
+- Career Relevance
+- Behavioral Signals
+- Location Fit
 
-preprocess.py
+The system processes 100,000 candidate profiles and returns the Top 100 most relevant candidates.
 
-embeddings.py
+---
 
-generate_embeddings.py
+## Project Architecture
 
-feature_engineering.py
+Job Description
+       |
+       v
+Semantic Embedding Generation
+       |
+       v
+Candidate Embedding Search
+       |
+       v
+Feature Engineering
+       |
+       +--> Career Score
+       +--> Behavior Score
+       +--> Location Score
+       |
+       v
+Weighted Scoring Engine
+       |
+       v
+Final Ranking
+       |
+       v
+Top 100 Candidates
 
-career_score.py
-
-behavior_score.py
-
-location_score.py
-
-scoring.py
-
-ranker.py
+---
 
 ## Methodology
 
+### 1. Semantic Similarity (50%)
+
+Sentence embeddings are generated using:
+
+BAAI/bge-small-en-v1.5
+
+Candidate profiles and the job description are converted into dense vector representations.
+
+Cosine similarity is used to measure semantic relevance.
+
+---
+
+### 2. Career Score (30%)
+
+Career relevance is evaluated using:
+
+- Current Title
+- Career History
+- AI/ML Experience
+- Retrieval & Ranking Experience
+- NLP / Search / Recommendation Systems Exposure
+
+Examples of preferred roles:
+
+- AI Engineer
+- ML Engineer
+- NLP Engineer
+- Search Engineer
+- Applied ML Engineer
+- Senior AI Engineer
+
+---
+
+### 3. Behavioral Score (15%)
+
+Behavioral signals are extracted from:
+
+- Recruiter Response Rate
+- Open To Work Status
+- Last Active Date
+- Interview Completion Rate
+- Saved By Recruiters
+- Profile Completeness
+
+These features improve recruiter-facing relevance.
+
+---
+
+### 4. Location Score (5%)
+
+Candidates are rewarded if they:
+
+- Are located in preferred hiring cities
+- Are willing to relocate
+- Match job location preferences
+
+---
+
+## Final Ranking Formula
+
 Final Score =
-0.60 × Semantic Similarity +
-0.20 × Career Score +
-0.10 × Behavior Score +
-0.10 × Location Score
+0.50 × Semantic Similarity
++ 0.30 × Career Score
++ 0.15 × Behavior Score
++ 0.05 × Location Score
 
-## Installation
+---
 
-pip install -r requirements.txt
+## Tech Stack
 
-## Run
+- Python
+- NumPy
+- Pandas
+- Sentence Transformers
+- BGE Embeddings
+- Scikit-Learn
 
-python test.py
+---
+
+## Dataset
+
+- 100,000 Candidate Profiles
+- Career History
+- Skills
+- Education
+- Behavioral Signals
+
+---
 
 ## Output
 
+The system produces:
+
 outputs/ranked_candidates.csv
+
+Columns:
+
+- candidate_id
+- rank
+- score
+- reasoning
+
+---
+
+## Future Improvements
+
+- Cross-Encoder Re-ranking
+- Learning-to-Rank Models
+- LLM-Based Candidate Reasoning
+- Recruiter Feedback Loops
+- Real-Time Candidate Recommendations
