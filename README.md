@@ -17,48 +17,16 @@ The system processes 100,000 candidate profiles and returns the Top 100 most rel
 
 ## Project Architecture
 
-Job Description
-
-       |
-
-       v
-Semantic Embedding Generation
-       
-       |
-       
-       v
-Candidate Embedding Search
-       
-       |
-       
-       v
-Feature Engineering
-       
-       |
-       
-       +--> Career Score
-       
+- Job Description
+- Semantic Embedding Generation
+- Candidate Embedding Search
+- Feature Engineering
+       +--> Career Score   
        +--> Behavior Score
-       
-       +--> Location Score
-       
-       |
-       
-       v
-       
-Weighted Scoring Engine
-       
-       |
-       
-       v
-       
-Final Ranking
-      
-       |
-       
-       v
-       
-Top 100 Candidates
+       +--> Location Score            
+- Weighted Scoring Engine    
+- Final Ranking
+- Top 100 Candidates
 
 ---
 
